@@ -29,14 +29,15 @@ dynamic input(String type, [String? text]) {
 }
 
 class Questionformat {
-  List<String>? question;
-  List<String> ans = [];
+  Set<String>? question;
+  List<String> userAns = [];
   Questionformat(this.question);
 
   void dispayQuestoins() {
     for (String que in question!) {
       print(que);
-      ans.add(input('i' , 'Select any one option A , B, C, D'));
+      userAns.add(input('S' ));
     }
   }
 }
+// /, 'Select any one option A , B, C, D'
