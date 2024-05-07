@@ -4,17 +4,27 @@ dynamic input(String type, String text) {
   switch (type) {
     case 'i' || 'I':
       try {
+        print(text);
         return int.parse(stdin.readLineSync()!);
       } catch (e) {
         print('The value you entered is not int.');
       }
     case 's' || 'S':
       try {
-        return int.parse(stdin.readLineSync()!);
+        print(text);
+        return stdin.readLineSync()!;
       } catch (e) {
         print('The value you entered is not String.');
       }
- 
+    case 'd' || 'D':
+      try {
+        print(text);
+        return double.parse(stdin.readLineSync()!);
+      } catch (e) {
+        print('The value you entered is not double.');
+      }
+    default:
+      print('please define data type');
   }
 }
 
