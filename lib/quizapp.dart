@@ -36,8 +36,17 @@ class Questionformat {
   void dispayQuestoins() {
     for (String que in question!) {
       print(que);
-      userAns.add(input('S' ));
+      bool temp = true;
+      while (temp) {
+        var option = 'aAbBcCdD'.split('');
+        var ans = input('s', 'Select one option: ');
+        if (ans.length == 1 && option.contains(ans)) {
+          userAns.add(ans);
+          temp = false;
+        } else {
+          temp = true;
+        }
+      }
     }
   }
 }
-// /, 'Select any one option A , B, C, D'
