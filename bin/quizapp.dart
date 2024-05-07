@@ -1,11 +1,8 @@
 import 'package:quizapp/quizapp.dart';
 import '../lib/filehandling.dart' as file;
 
-
 void main(List<String> arguments) {
-  Set<String> questionList = {
-    'Ubit full form \na.Umer basha\nb.Umair bsha\nc.information tec'
-  };
+  Set<String> questionList = file.fileHanding().split(',').toSet();
   Questionformat questions = Questionformat(questionList);
   questions.dispayQuestoins();
   print(questions.userAns);
