@@ -50,7 +50,7 @@ class ScoreSys extends Questionformat {
     for (int i = 0; i < super.userAns.length; i++) {
       if (super.userAns[i] == ans[i]) {
         score++;
-      } else {}
+      }
     }
     return score;
   }
