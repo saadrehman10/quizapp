@@ -30,7 +30,7 @@ dynamic input(String type, [String? text]) {
 
 class Questionformat {
   Set<String>? question;
-   static List<String> userAns = [];
+  List<String> userAns = [];
   Questionformat(this.question);
 
   void dispayQuestoins() {
@@ -49,4 +49,9 @@ class Questionformat {
       }
     }
   }
+}
+
+class ScoreSyS extends Questionformat {
+  Set<String>? ans;
+  ScoreSyS(Set<String>? questiontext, this.ans) : super(questiontext!);
 }
