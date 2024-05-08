@@ -1,8 +1,9 @@
-import 'dart:io' as io;
-Uri filePath = io.Platform.script.resolve('.');
+import 'dart:io';
+import 'package:path/path.dart' as path;
 
 String fileHanding() {
-  io.File file = io.File('../assets/question.cvs');
+  String filepath = path.normalize('../assets/question.cvs');
+  File file = File(filepath);
   String content = file.readAsStringSync();
   return content;
 }
