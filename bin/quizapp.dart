@@ -5,5 +5,5 @@ void main(List<String> arguments) {
   Set<String> questionList = file.fileHanding().split(',').toSet();
   Questionformat questions = Questionformat(questionList);
   questions.dispayQuestoins();
-  print(questions.userAns);
+  print(Questionformat.userAns);
 }
