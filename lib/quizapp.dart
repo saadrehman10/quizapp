@@ -42,7 +42,16 @@ class Questionformat extends Input {
   }
 }
 
-class ScoreSyS extends Questionformat {
-  Set<String>? ans;
-  ScoreSyS(Set<String>? questiontext, this.ans) : super(questiontext!);
+class ScoreSys extends Questionformat {
+  List<String> ans;
+  int score = 0;
+  ScoreSys(Set<String>? questiontext, this.ans) : super(questiontext!);
+  int calculate() {
+    for (int i = 0; i < super.userAns.length; i++) {
+      if (super.userAns[i] == ans[i]) {
+        score++;
+      }
+    }
+    return score;
+  }
 }
