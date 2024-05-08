@@ -1,49 +1,29 @@
 import 'dart:io';
 
-class Input<T> {
-  // dynamic input([String? text]) {
-  // switch (T) {
-  //   case  int :
-  //     try {
-  //       print(text ?? 'Enter:');
-  //       return T.parse(stdin.readLineSync()!);
-  //     } catch (e) {
-  //       print('The value you entered is not int.');
-  //     }
-  //   case String:
-  //     try {
-  //       print(text ?? 'Enter:');
-  //       return stdin.readLineSync()!;
-  //     } catch (e) {
-  //       print('The value you entered is not String.');
-  //     }
-  //   case double:
-  //     try {
-  //       print(text ?? 'Enter:');
-  //       return double.parse(stdin.readLineSync()!);
-  //     } catch (e) {
-  //       print('The value you entered is not double.');
-  //     }
-  //   default:
-  //     print('please define data type')
-  //     return null;
-  // }
-//  }
-  T? input([String? text]){
+class Input {
+   input<T>([String? text]) {
     try {
       print(text ?? 'Enter:');
-      return T.parse(stdin.readLineSync()!);
+      final inputString = stdin.readLineSync();
+      if (inputString != null) {
+        if (T == String) {
+          return inputString as T;
+        } else if (T == int) {
+          return int.parse(inputString) as T;
+        } else if (T == double) {
+          return double.parse(inputString) as T;
+        }
+        // Add more type checks for other supported types if needed
+      } else {
+        print('No input provided.');
+      }
     } catch (e) {
-      print('The value you entered is not $T.');
+      print('The value you entered is not of type $T.');
     }
   }
-    
-
 }
 
-
-
-class Questionformat  extends Input{
+class Questionformat extends Input {
   Set<String>? question;
   List<String> userAns = [];
   Questionformat(this.question);
@@ -54,7 +34,7 @@ class Questionformat  extends Input{
       bool temp = true;
       while (temp) {
         var option = 'aAbBcCdD'.split('');
-        var ans = input<int>('Select one option: ');
+        var ans = input<String>('Select one option: ');
         if (ans.length == 1 && option.contains(ans)) {
           userAns.add(ans);
           temp = false;
