@@ -1,5 +1,5 @@
 import 'package:quizapp/quizapp.dart';
-import '../lib/filehandling.dart' as file;
+import 'package:quizapp/filehandling.dart' as file;
 
 
 void main(List<String> arguments) {
