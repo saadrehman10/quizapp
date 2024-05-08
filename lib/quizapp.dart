@@ -30,7 +30,7 @@ dynamic input(String type, [String? text]) {
 
 class Questionformat {
   Set<String>? question;
-  List<String> userAns = [];
+   static List<String> userAns = [];
   Questionformat(this.question);
 
   void dispayQuestoins() {
