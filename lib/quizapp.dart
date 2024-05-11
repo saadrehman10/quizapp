@@ -1,6 +1,6 @@
 import 'dart:io';
 
-class Input {
+abstract class Input {
   dynamic input<T>([String? text]) {
     try {
       print(text ?? 'Enter:');
